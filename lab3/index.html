@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-zinc-300">
+    <div id="app " class="container-xl">
+      <header class="flex justify-between items-center px-5 py-2">
+        <h3 class="font-medium" id="labelWelcome">Login in to get stared</h3>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/20/FPT_Polytechnic.png"
+          alt=""
+          class="w-28"
+        />
+        <div class="">
+          <input
+            class="rounded-2xl text-center max-w-28 py-1"
+            type="text"
+            id="inputLoginUsername"
+            placeholder="user"
+          />
+          <input
+            class="rounded-2xl text-center max-w-28 py-1"
+            type="text"
+            id="inputLoginPin"
+            placeholder="PIN"
+          />
+          <button type="submit " class="btnLogin">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </header>
+      <main
+        class="max-w-screen-lg mx-auto"
+        id="containerApp"
+        style="opacity: 0"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <h2 class="text-xl font-semibold">Current balance</h2>
+            <p class="text-xs text-slate-400 font-semibold">As of 05/03/2037</p>
+          </div>
+          <h2 class="text-4xl font-semibold">0000$</h2>
+        </div>
+        <div class="content my-9 flex justify-between">
+          <div class="left grow">
+            <div
+              class="bg-stone-50 rounded-tl-lg p-2 min-h-full flex flex-column"
+            >
+              <div
+                class="grow bg-white border-solid border-r-2 border-b-2 border-gray-400 min-h-full"
+                id="leftContent"
+              ></div>
+            </div>
+          </div>
+          <div class="right ml-5">
+            <div
+              class="bg-gradient-to-r from-yellow-400 to-yellow-500 px-6 py-8 rounded-md"
+            >
+              <h3 class="mb-3 font-semibold">Transfer money</h3>
+              <form action="" class="flex items-center">
+                <div class="mr-3">
+                  <input
+                    type="text"
+                    class="rounded-md"
+                    style="background-color: rgba(0, 0, 0, 0.1)"
+                  />
+                  <label class="block text-center" for="">Transfer to</label>
+                </div>
+                <div class="">
+                  <input
+                    type="number"
+                    class="rounded-md"
+                    style="background-color: rgba(0, 0, 0, 0.1)"
+                  />
+                  <label for="" class="block text-center">Amount</label>
+                </div>
+                <button
+                  class="px-5 bg-white rounded-md mb-6 ml-2"
+                  id="btnTransfer"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+            <!-- green -->
+            <div
+              class="bg-gradient-to-r from-green-500 to-green-600 px-6 py-8 rounded-md my-5"
+            >
+              <h3 class="mb-3 font-semibold">Reques loan</h3>
+              <form action="" class="flex items-center">
+                <div class="">
+                  <input
+                    type="number"
+                    class="rounded-md"
+                    style="background-color: rgba(0, 0, 0, 0.1)"
+                  />
+                  <label for="" class="block text-center">Amount</label>
+                </div>
+                <button class="px-5 bg-white rounded-md mb-6 ml-2">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+            <!-- red -->
+            <div
+              class="bg-gradient-to-r from-red-400 to-red-500 px-6 py-8 rounded-md"
+            >
+              <h3 class="mb-3 font-semibold">Close account</h3>
+              <form action="" class="flex items-center">
+                <div class="mr-3">
+                  <input
+                    type="text"
+                    class="rounded-md"
+                    style="background-color: rgba(0, 0, 0, 0.1)"
+                  />
+                  <label class="block text-center" for="">Confirm user</label>
+                </div>
+                <div class="">
+                  <input
+                    type="number"
+                    class="rounded-md"
+                    style="background-color: rgba(0, 0, 0, 0.1)"
+                  />
+                  <label for="" class="block text-center">Confirm PIN</label>
+                </div>
+                <button class="px-5 bg-white rounded-md mb-6 ml-2">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+        <div class="grid grid-cols-2 my-10">
+          <div class="flex justify-between">
+            <div class="flex">
+              <h3 class="in font-semibold text-xs">
+                IN
+                <span class="font-bold text-green-500 text-lg"> 0000$</span>
+              </h3>
+              <h3 class="out mx-5 font-semibold text-xs">
+                OUT
+                <span class="font-bold text-red-400 text-lg">0000$</span>
+              </h3>
+              <h3 class="INTEREST font-semibold text-xs">
+                INTEREST
+                <span class="font-bold text-green-500 text-lg">0000$</span>
+              </h3>
+            </div>
+            <div class="">
+              <i class="fa-solid fa-arrow-down-long text-[11px]"></i>
+              Short
+            </div>
+          </div>
+          <div class="text-right">
+            <p>
+              You will be logged out in <span class="font-semibold">05:00</span>
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
